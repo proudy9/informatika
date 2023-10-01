@@ -3,7 +3,7 @@ from math import *
 
 def task1(x, y, z):
     a1 = (sinh(x) - sinh(y)) / (cosh(x) + cosh(y))
-    b1 = (sin(x)) ** 2 + (cos(z)) ** 2 + log(e ** (-z) + e ** (-9))
+    b1 = (sin(x)) ** 2 + (cos(z)) ** 2 + log(e ** (-z) + e ** (-y))
     a = "{:.4f}".format(a1)
     b = "{:.4f}".format(b1)
     return a, b
