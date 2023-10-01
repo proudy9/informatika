@@ -2,18 +2,23 @@ from math import *
 
 
 def task1(x, y, z):
-    a = (sinh(x) - sinh(y)) / (cosh(x) + cosh(y))
-    b = (sin(x)) ** 2 + (cos(z)) ** 2 + log(e ** (-z) + e ** (-9))
+    a1 = (sinh(x) - sinh(y)) / (cosh(x) + cosh(y))
+    b1 = (sin(x)) ** 2 + (cos(z)) ** 2 + log(e ** (-z) + e ** (-9))
+    a = "{:.4f}".format(a1)
+    b = "{:.4f}".format(b1)
     return a, b
 
 
-print(f'Проверка 1 задания:\nзначения a и b:{task1(x=int(input("Введите значение x: ")), y=int(input("Введите значение y: ")), z=int(input("Введите значение z: ")))}')
+print(
+    f'Проверка 1 задания:\nзначения a и b:{task1(x=int(input("Введите значение x: ")), y=int(input("Введите значение y: ")), z=int(input("Введите значение z: ")))}')
 
 
 def task2(x):
     a = -3
     b = -1
-    return a * (((x ** b + x) / 3) - (x ** b) ** (1 / 4))
+    end = a * (((x ** b + x) / 3) - (x ** b) ** (1 / 4))
+    end_of_end = "{:.4f}".format(end)
+    return end_of_end
 
 
 # Ввод для проверки
@@ -24,7 +29,10 @@ print(f'Проверка 2 задания:\nf(x1)={task2(x1)}, f(x2)={task2(x2)}
 
 
 def task3(x):
-    return sinh(x ** (1 / 3)) + cosh(x ** (1 / 3))
+    formula = sinh(x ** (1 / 3)) + cosh(x ** (1 / 3))
+    end = "{:.4f}".format(formula)
+    return end
+
 
 # Ввод для проверки
 x1 = int(input("Введите значение x1: "))
@@ -36,7 +44,10 @@ print(f'Проверка 3 задания:\nf(x1)={task3(x1)}, f(x2)={task3(x2)}
 def task4(r, h):
     #     Нахождение стороны через радиус
     a = 2 * r
-    return (4 * a) * h
+    end = (4 * a) * h
+    end_of_end = "{:.4f}".format(end)
+    return end_of_end
+
 
 # Ввод радиусов и высот для проверки
 r1 = int(input("Введите значение r1: "))
@@ -56,7 +67,8 @@ def task5(m1, v1, m2, v2, m3):
     total_impulse_velocity = (m1 * v1 + m2 * v2) / total_impulse_mass
     # Расчет скорости третьего осколка
     v3 = total_impulse_velocity * total_impulse_mass / (total_impulse_mass + m3)
-    return v3
+    end = "{:.4f}".format(v3)
+    return end
 
 
 # Ввод данных
@@ -83,7 +95,9 @@ def task6(cylinder_volume):
 
     # Объем призмы
     prism_volume = prism_base_area * prism_height
-    return prism_volume
+    end = "{:.4f}".format(prism_volume)
+    return end
+
 
 # Ввод объема цилиндра
 cylinder_volume = float(input("Введите объем цилиндра (м^3): "))
@@ -95,7 +109,9 @@ print("Задание 6:\nОбъем призмы: ", prism_volume, "м^3")
 
 def task7(x1, x2):
     distance = abs(x2 - x1)
-    return distance
+    end = "{:.4f}".format(distance)
+    return end
+
 
 # Ввод координат точек
 x1 = float(input("Введите координату x1: "))
@@ -105,12 +121,15 @@ x2 = float(input("Введите координату x2: "))
 distance = task7(x1, x2)
 print("Расстояние между точками:", distance)
 
+
 def task8(m, r, F):
     # Перевод силы трения из кН в Н
     F = F * 1000
     # Расчет максимальной скорости
     v = sqrt((F * r) / m)
-    return v
+    end = "{:.4f}".format(v)
+    return end
+
 
 # Ввод данных
 m = float(input("Введите массу автомобиля (кг): "))
@@ -121,19 +140,21 @@ F = float(input("Введите максимальную силу трения (
 maximum_speed = task8(m, r, F)
 print("Наибольшая скорость автомобиля на повороте без заноса:", maximum_speed, "м/с")
 
+
 def task9(yuan, commission):
     # Комиссия в процентах
     commission1 = yuan_amount * commission / 100
-    
+
     # Сумма после вычета комиссии
     converted_amount = yuan_amount - commission1
-    
+
     # Конвертация из юаней в доллары
     dollar_amount = converted_amount / 8.5  # Предполагаемый курс обмена
-    
+
     # Округление суммы до 2 знаков после запятой
     rounded_amount = round(dollar_amount, 2)
-    return rounded_amount
+    end = "{:.4f}".format(rounded_amount)
+    return end
 
 
 yuan_amount = float(input("Введите сумму в юанях: "))
