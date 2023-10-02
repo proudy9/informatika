@@ -3,7 +3,7 @@ from math import *
 
 def task1(x, y, z):
     a1 = (sinh(x) - sinh(y)) / (cosh(x) + cosh(y))
-    b1 = (sin(x)) ** 2 + (cos(z)) ** 2 + log(e ** (-z) + e ** (-y))
+    b1 = ((sin(x)) ** 2 + (cos(z)) ** 2 + log10(e ** z + e ** (-y)))
     a = "{:.4f}".format(a1)
     b = "{:.4f}".format(b1)
     return a, b
@@ -16,7 +16,7 @@ print(
 def task2(x):
     a = -3
     b = -1
-    end = a * (((x ** b + x) / 3) - (x ** b) ** (1 / 4))
+    end = a * ((x ** (b) + x)/ 3) - ((x ** (b)) ** (1/4))
     end_of_end = "{:.4f}".format(end)
     return end_of_end
 
@@ -62,11 +62,11 @@ print(f'Проверка задания 4:\nr1h1: {task4(r1, h1)}, r2h2: {task4(
 
 def task5(m1, v1, m2, v2, m3):
     # Расчет общей импульсной массы
-    total_impulse_mass = m1 + m2
+    total_impulse_mass = abs(m1 + m2)
     # Расчет общей импульсной скорости
-    total_impulse_velocity = (m1 * v1 + m2 * v2) / total_impulse_mass
+    total_impulse_velocity = (abs(m1) * v1 + abs(m2) * v2) / total_impulse_mass
     # Расчет скорости третьего осколка
-    v3 = total_impulse_velocity * total_impulse_mass / (total_impulse_mass + m3)
+    v3 = total_impulse_velocity * total_impulse_mass / (total_impulse_mass + abs(m3))
     end = "{:.4f}".format(v3)
     return end
 
@@ -80,7 +80,7 @@ m3 = float(input("Введите массу третьего осколка (к�
 
 # Вычисление скорости третьего осколка
 v3 = task5(m1, v1, m2, v2, m3)
-print("Скорость третьего осколка(5 задание: ", v3, "м/с")
+print("Скорость третьего осколка(5 задание: ", v3, "м/с)")
 
 
 def task6(cylinder_volume):
@@ -141,7 +141,7 @@ maximum_speed = task8(m, r, F)
 print("Наибольшая скорость автомобиля на повороте без заноса:", maximum_speed, "м/с")
 
 
-def task9(yuan, commission):
+def task9(yuan_amount, commission):
     # Комиссия в процентах
     commission1 = yuan_amount * commission / 100
 
@@ -153,7 +153,7 @@ def task9(yuan, commission):
 
     # Округление суммы до 2 знаков после запятой
     rounded_amount = round(dollar_amount, 2)
-    end = "{:.4f}".format(rounded_amount)
+    end = "{:.2f}".format(rounded_amount)
     return end
 
 
