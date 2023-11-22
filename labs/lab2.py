@@ -4,8 +4,6 @@ from math import *
 def task1():
     def is_perfect_square(num):
         a = num
-        if a < 0:
-            return print('Проверка не пройдена, введите число > 0')
         sqrt = isqrt(a)
         return sqrt ** 2 == a
 
@@ -14,6 +12,9 @@ def task1():
 
     while True:
         number = int(input('Введите число для проверки: '))
+        if number < 0:
+            print('Проверка не пройдена, введите число > 0')
+            continue
         limitt = int(input('Введите лимит: '))
         if (is_perfect_square(number) and is_less_than(number, limitt)) == True:
             print('Проверка прошла успешно!')
